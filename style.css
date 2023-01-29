@@ -1,0 +1,14 @@
+:root {
+    --bg-color: #000000;
+}
+
+body {
+    background-color: var(--bg-color);
+}
+
+#player {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+}
