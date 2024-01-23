@@ -13,8 +13,7 @@ function suffleVideo(playerId) {
         .then((res) => res.json())
         .then((data) => {
             let videoId = data[Math.round(Math.random()*(data.length-1))];
+            // update videoplayer
+            video.setAttribute("src", getEmbedSrc(videoId));
         });
-    
-    // update videoplayer
-    video.setAttribute("src", getEmbedSrc(videoId));
 }
