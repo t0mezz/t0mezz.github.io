@@ -9,7 +9,7 @@ function getEmbedSrc(videoId) {
 
 function suffleVideo(playerId) {
     let video = document.getElementById(playerId);
-    fetch("./database/career.json")
+    fetch("./videos.json")
         .then((res) => res.json())
         .then((data) => {
             let videoId = data[Math.round(Math.random()*(data.length-1))];
