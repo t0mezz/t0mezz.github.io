@@ -1,4 +1,4 @@
-import data from './videos.json' assert { type: 'json' };
+//import data from './videos.json' assert { type: 'json' };
 var root = document.documentElement;
 
 suffleVideo("player");
@@ -9,8 +9,12 @@ function getEmbedSrc(videoId) {
 
 function suffleVideo(playerId) {
     let video = document.getElementById(playerId);
-    let videoId = data[Math.round(Math.random()*(data.length-1))];
-
+    fetch("./database/career.json")
+        .then((res) => res.json())
+        .then((data) => {
+            let videoId = data[Math.round(Math.random()*(data.length-1))];
+        });
+    
     // update videoplayer
     video.setAttribute("src", getEmbedSrc(videoId));
 }
