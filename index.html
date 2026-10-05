@@ -4,12 +4,51 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Monke</title>
-  <link rel="icon" type="image/x-icon" href="./icon.png">
+  <title>Monke — Random Shuffle</title>
+  <meta name="description" content="Random shuffled monke videos. Hit shuffle for a fresh one.">
+  <meta property="og:title" content="Monke">
+  <meta property="og:description" content="Random shuffled monke videos.">
+  <meta property="og:type" content="website">
+  <link rel="icon" type="image/png" href="./icon.png">
   <link rel="stylesheet" href="./style.css">
-  <script type="module" src="./videoshuffle.js"></script>
 </head>
-  <body>
-    <iframe id="player" width="560" height="315" src="" frameborder="0" allow="autoplay; encrypted-media"></iframe>
-  </body>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <h1 class="site-title">MONKE</h1>
+      <p class="site-subtitle">random shuffle — one video at a time</p>
+    </div>
+  </header>
+
+  <main class="stage">
+    <div class="player-wrap">
+      <iframe
+        id="player"
+        src=""
+        title="Monke video player"
+        frameborder="0"
+        allow="autoplay; encrypted-media"
+        allowfullscreen
+        loading="lazy"
+      ></iframe>
+    </div>
+
+    <p id="status" class="status" role="status" aria-live="polite">Loading…</p>
+
+    <div class="controls">
+      <button id="shuffleBtn" type="button" class="btn btn-primary">Shuffle</button>
+      <button id="copyLinkBtn" type="button" class="btn btn-ghost">Copy link</button>
+    </div>
+
+    <p class="hint">Autoplays muted and loops. Press <kbd>N</kbd> or <kbd>Space</kbd> to shuffle.</p>
+  </main>
+
+  <footer class="site-footer">
+    <span>kortec.me</span>
+    <span class="dot">·</span>
+    <span id="videoCount"></span>
+  </footer>
+
+  <script type="module" src="./videoshuffle.js"></script>
+</body>
 </html>
